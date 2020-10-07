@@ -1,0 +1,54 @@
+# This is an example mods.toml file. It contains the data relating to the loading mods.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# Note that there are a couple of TOML lists in this file.
+# Find more information on toml format here:  https://github.com/toml-lang/toml
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+modLoader="javafml" #mandatory
+# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
+loaderVersion="[34,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+# The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
+# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
+license="All rights reserved"
+issueTrackerURL="https://github.com/Cibernet83/Omnicraft/issues/" #optional
+
+[[mods]] #mandatory
+
+modId="omnicraft" #mandatory
+
+version="${file.jarVersion}" #mandatory
+
+displayName="Omnicraft" #mandatory
+
+updateJSONURL="http://myurl.me/" #optional
+
+displayURL="https://www.curseforge.com/minecraft/mc-mods/omnicraft" #optional
+
+logoFile="logo.png" #optional
+
+credits="Thanks to Cartoon Network and Man of action, for letting Ben 10 exist!" #optional
+
+authors="Cibernet" #optional
+
+description='''
+Omnicraft is a mod that adds elements from the popular tv show Ben 10 into minecraft, most notably the omnitrix.
+'''
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.examplemod]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[34,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+# Here's another dependency
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3]"
+    ordering="NONE"
+    side="BOTH"
